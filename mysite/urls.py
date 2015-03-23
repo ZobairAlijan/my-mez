@@ -1,18 +1,21 @@
 from __future__ import unicode_literals
 from django.conf import settings
 from django.contrib import admin
-from mysite.homepage import views
+from mysite.Main_page import views
 from mezzanine.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
-from mysite.our_picture.views import OurPictureView
+from mysite.Team_Images.views import OurPictureView
 from django.conf.urls import patterns, include, url
 from mezzanine.core.views import direct_to_template
+from mysite.news.views import NewsPageView
+from mysite.jobs.views import JobsPageView
+from mysite.Ambassadors.views import AmbassadorsPageView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from mysite.page.views import AboutBoardPageView, AboutPageView, MissionPageView, PartnersPageView, \
-    ServicePageView, GetInvolvedPageView, NewsPageView, ApsPageView, CommunitiesPageView,  \
-    InvolvedParticipatesPageView, JobsPageView, SponsorsPageView, StatsPageView, PrPageView, AmbassadorsPageView
+    ServicePageView, GetInvolvedPageView, ApsPageView, CommunitiesPageView,  \
+    InvolvedParticipatesPageView, SponsorsPageView, StatsPageView, PrPageView
 
 
 admin.autodiscover()

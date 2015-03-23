@@ -253,7 +253,7 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "mysite.jobs",
     "mysite.Team_Images",
-    "mysite.homepage",
+    #"mysite.homepage",
     "mysite.Main_page",
     "mysite.news",
     "mysite.Ambassadors",

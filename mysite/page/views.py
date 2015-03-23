@@ -5,13 +5,11 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.views import generic
 from mysite.Main_page.models import Pages
 from django.conf import settings
-from mysite.news.models import News
-from mysite.Ambassadors.models import Ambassadors
 from mezzanine.utils.views import render
 
 
 class IndexPageView(generic.TemplateView):
-    template_name = 'page/index.html'
+    template_name = 'homepage/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(IndexPageView, self).get_context_data(**kwargs)
@@ -55,38 +53,11 @@ class ServicePageView(generic.TemplateView):
 
 
 class GetInvolvedPageView(generic.TemplateView):
-    template_name = 'page/get-involved.html'
+    template_name = 'page/get_involved.html'
 
     def get_context_data(self, **kwargs):
         context = super(GetInvolvedPageView, self).get_context_data(**kwargs)
         context['page'] = Pages.objects.filter(slug=u'get-involved')
-        return context
-
-
-class NewsPageView(generic.TemplateView):
-    template_name = 'page/news.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(NewsPageView, self).get_context_data(**kwargs)
-        context['news'] = News.objects.all()
-        return context
-
-
-class AmbassadorsPageView(generic.TemplateView):
-    template_name = 'page/ambassadors.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(AmbassadorsPageView, self).get_context_data(**kwargs)
-        context['ambassadors'] = Ambassadors.objects.all()
-        return context
-
-
-class JobsPageView(generic.TemplateView):
-    template_name = 'page/jobs.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(JobsPageView, self).get_context_data(**kwargs)
-        context['page'] = Pages.objects.filter(slug=u'jobs')
         return context
 
 
